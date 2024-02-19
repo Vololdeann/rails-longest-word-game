@@ -1,0 +1,25 @@
+<h1>RESULTS</h1>
+
+<% if @included %>
+  <% if @english %>
+    <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
+  <% else %>
+    <p>Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
+  <% end %>
+<% else %>
+  <p>Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters.join(", ") %></p>
+<% end %>
+
+<%= link_to "Play again", new_path %>
+
+
+  <!--
+  Le mot ne peut pas être créé à partir de la grille d’origine.
+
+  Le mot est valide d’après la grille, mais ce n’est pas un mot anglais valide.
+
+  Le mot est valide d’après la grille et est un mot anglais valide.
+
+
+
+  En bas des résultats, ajoute un lien (link_to) pour retourner à la page d’une nouvelle partie.
